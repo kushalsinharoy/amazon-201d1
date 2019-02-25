@@ -97,13 +97,9 @@ function sumArray(sumArr) { //eslint-disable-line
     var secondElement = '';
     var secondElementPartTwo = ' was passed in as an array of numbers, and ';
     var secondElementPartThree = ' is their sum.';
-    for(var i = 0; i<sumArr.length; i++) {
-        sumOfElementsInArray = sumOfElementsInArray + sumArr[i];
-        secondElement = secondElement + sumArr[i] + ',';
-    }
-    // trim the last charater and append the other parts.
-    secondElement = secondElement.slice(0, -1);
-    secondElement =  secondElement + secondElementPartTwo + sumOfElementsInArray + secondElementPartThree;
+
+    sumOfElementsInArray = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0];
+    secondElement =  sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + secondElementPartTwo + sumOfElementsInArray + secondElementPartThree;
 
     return[sumOfElementsInArray, secondElement];
 }
